@@ -1,0 +1,95 @@
+@import '../../../../variables';
+
+.pi {
+  color: $placeholderColor !important;
+}
+
+h5 {
+  font-weight: 500;
+}
+
+label {
+  font-weight: 500;
+}
+
+input {
+  padding: 10px 0;
+}
+
+::ng-deep p-inputMask {
+  width: 100%;
+  display: block;
+  & .p-inputmask {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+}
+
+::ng-deep p-password {
+  & .p-password-input {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 100%;
+    padding-right: 35px !important;
+    padding-left: 35px !important;
+  }
+
+  & .pi {
+    right: 12px !important;
+  }
+
+  & li {
+    font-family: $fontFamily;
+  }
+}
+
+::ng-deep .p-dropdown {
+  border-color: $inputBorderUnfocused !important;
+
+  &:hover, &:focus {
+    border-color: $primaryColor !important;
+  }
+}
+
+.input-icon {
+  right: 12px !important;
+  top: 23px !important;
+}
+
+.required:after {
+  content:" *";
+  color: red;
+}
+
+.agreement-text {
+  font-family: $fontFamily;
+  font-size: 1.1rem;
+  font-weight: 500;
+
+  & .agreement {
+    font-size: 1.1rem;
+    color: $primaryColor;
+    font-weight: 500;
+  }
+}
+
+.signIn-btn {
+  & a {
+    & .pi {
+      color: $primaryColor !important;
+    }
+    font-family: $fontFamily;
+    text-decoration: none;
+    color: $primaryColor;
+    &:hover {
+      color: $primaryColorDark;
+      & .pi {
+        color: $primaryColorDark !important;
+      }
+    }
+  }
+}
+
+small {
+  font-family: $fontFamily;
+}

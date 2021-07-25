@@ -1,0 +1,78 @@
+@import "variables.scss";
+
+$removerOutline: inset 0 0 0 !important;
+
+h1, h2, h3, h4, h5, h6, input, label, button, .font-family, .p-placeholder {
+  font-family: $fontFamily !important;
+  font-weight: normal;
+}
+
+input:focus, .p-checkbox-box, .primary-button, .p-button-outlined, .p-dropdown {
+  box-shadow: $removerOutline;
+}
+
+input {
+  border-color: $inputBorderUnfocused !important;
+
+  &:focus, &:hover {
+    border-color: $primaryColor !important;
+  }
+
+  &::placeholder {
+    color: $placeholderColor !important;
+  }
+}
+
+label {
+  font-size: 16px;
+  color: $fontColor;
+}
+
+.p-placeholder, .p-dropdown-trigger {
+  color: $placeholderColor !important;
+}
+
+.p-checkbox-box {
+  &:hover {
+    border-color: $primaryColor !important;
+  }
+}
+
+.p-highlight {
+  border-color: $primaryColor !important;
+  background: $primaryColor !important;
+}
+
+.p-focus {
+  border-color: $primaryColor !important;
+}
+
+
+.p-button-label {
+  margin-bottom: 5px !important;
+}
+
+.primary-button {
+  background-color: $primaryColor !important;
+  border-color: $primaryColor !important;
+
+  &:hover {
+    background-color: $primaryColorDark !important;
+    border-color: $primaryColorDark !important;
+  }
+}
+
+.p-button-outlined {
+  border-color: $primaryColor !important;
+  color: $primaryColor !important;
+
+  &:hover {
+    background-color: $primaryColorWhite !important;
+  }
+}
+
+.p-dropdown-item-group {
+  &:hover {
+    background-color: $primaryColorWhite !important;
+  }
+}

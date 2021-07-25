@@ -1,0 +1,63 @@
+@import '../../../../variables';
+
+.pi {
+  color: $placeholderColor !important;
+}
+
+input {
+  padding: 10px 0;
+}
+
+.input-icon {
+  right: 12px !important;
+}
+
+.pass-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  & a {
+    font-family: $fontFamily;
+    color: $primaryColor;
+
+    &:hover {
+      text-decoration-line: underline;
+    }
+  }
+}
+
+
+.separator {
+  display: block;
+  text-align: center;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.separator > span {
+  position: relative;
+  display: inline-block;
+  font-family: $fontFamily;
+  color: $placeholderColor;
+}
+
+.separator > span:before,
+.separator > span:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  height: 1px;
+  background: $inputBorderUnfocused;
+}
+
+.separator > span:before {
+  right: 100%;
+  margin-right: 15px;
+}
+
+.separator > span:after {
+  left: 100%;
+  margin-left: 15px;
+}

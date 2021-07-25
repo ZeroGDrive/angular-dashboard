@@ -1,0 +1,41 @@
+@font-face {
+  font-family: Monster;
+  src: url("assets/fonts/DINNextLTArabic-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Monster;
+  src: url("assets/fonts/DINNextLTArabic-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Monster;
+  src: url("assets/fonts/DINNextLTArabic-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Monster;
+  src: url("assets/fonts/DINNextLTArabic-LIGHT.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+$fontFamily: Monster, -apple-system, BlinkMacSystemFont, "Segoe UI",
+Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+$fontColor: rgb(88,82,77);
+
+$primaryColor: rgb(238	129	55);
+$primaryColorDark: darken($primaryColor, 8%);
+$primaryColorWhite: mix(white, $primaryColor, 97%);
+$inputBorderUnfocused: rgb(241,241,241);
+$placeholderColor: rgba(157,157,157);
+
+@mixin shadow-light {
+  box-shadow: rgba(0, 0, 0, 0.1) -4px 9px 25px -6px;
+}

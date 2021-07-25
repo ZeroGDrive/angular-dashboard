@@ -1,0 +1,14 @@
+<div class="grid min-h-screen min-w-full auth-background">
+  <div class="lg:col-6 col-12 form-side">
+    <img src="assets/images/logoipsum-logo-14.svg" alt="Logo" class="logo">
+    <p-card styleClass="shadow-none" class="my-5 shadow-light py-3"
+            [ngClass]="{'card-signIn': currentUrl === '/login', 'card-signUp': currentUrl === '/register'}">
+
+      <ng-content></ng-content>
+
+    </p-card>
+
+    <span class="rights mb-3"><span>طموح</span> 	&#xA9; 2021</span>
+  </div>
+  <div class="col-6 hidden lg:block">4</div>
+</div>
