@@ -1,12 +1,54 @@
 @import "../../../../variables.scss";
+.layout-sidebar {
+  position: fixed;
+  right: 0;
+  top: 0;
+  height: 100%;
+  background-color: $menuColor;
+  width: 250px;
+  user-select: none;
+  transition: transform .4s cubic-bezier(.05, .74, .2, .99);
+  display: flex;
+  flex-direction: column;
+
+  .logo {
+    min-height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $menuColorDarker;
+    z-index: 1;
+
+    img {
+      width: 100px;
+    }
+  }
+
+  .layout-menu {
+    overflow-y: auto;
+    flex-grow: 1;
+
+    .menu-category {
+      display: block;
+      color: $primaryColor;
+      font-weight: 500;
+      user-select: none;
+      padding: 1.5rem 33px 1rem 0;
+      font-size: 15px;
+    }
+  }
+}
+
+
+
 p-menu {
   ::ng-deep & .p-menu {
     width: 100%;
     background-color: transparent;
     border: 0;
 
-    & .p-menu-list {
-      & .p-menuitem {
+    .p-menu-list {
+      .p-menuitem {
         font-size: 16px;
         min-height: 45px;
         & a {
@@ -14,7 +56,7 @@ p-menu {
           height: 100%;
         }
 
-        & .p-menuitem-link {
+        .p-menuitem-link {
           padding: 12px 25px;
           & span {
             color: white;
@@ -32,7 +74,7 @@ p-menu {
           }
         }
 
-        & .p-menuitem-link-active {
+        .p-menuitem-link-active {
           background-color: $menuColorDarker;
           & span {
             color: $primaryColor !important;
