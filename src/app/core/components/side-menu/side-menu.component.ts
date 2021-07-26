@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {animate, state, style, transition, trigger} from "@angular/animations";
+import {MenuItem} from "primeng/api";
 
 @Component({
   selector: 'app-side-menu',
@@ -22,6 +23,17 @@ import {animate, state, style, transition, trigger} from "@angular/animations";
 })
 export class SideMenuComponent implements OnInit {
   @Input() active = true;
+  mainItems: MenuItem[] = [
+    {label: 'الرئيسية', icon: 'pi pi-fw pi-home', routerLink: ['/'], routerLinkActiveOptions: {exact: true}},
+    {label: 'المنتجات', icon: 'pi pi-fw pi-table'},
+    {label: 'الطلبات', icon: 'pi pi-fw pi-list'},
+    {label: 'العملاء', icon: 'pi pi-fw pi-users'},
+    {label: 'التقارير', icon: 'pi pi-fw pi-book'},
+  ];
+  settingsItems: MenuItem[] = [
+    {label: 'إعدادات المتجر', icon: 'pi pi-fw pi-cog'},
+    {label: 'المحفظة و الفواتير', icon: 'pi pi-fw pi-wallet'},
+  ]
 
   constructor() { }
 

@@ -3,13 +3,8 @@
     <img alt="logo" src="assets/images/logoipsum-logo-14.svg"/>
   </a>
   <div class="layout-menu">
-    <div class="menu-category">General</div>
-    <div class="menu-items">
-      <a [routerLink]=" ['/setup']" routerLinkActive="router-link-exact-active">Get Started</a>
-      <a [routerLink]=" ['/i18n']" routerLinkActive="router-link-exact-active">Locale</a>
-      <a href="https://github.com/primefaces/primeng/wiki/Migration-Guide" target="_blank">Migration Guide</a>
-
-    </div>
-
+      <p-menu [model]="mainItems"></p-menu>
+    <div class="menu-category">الاعدادات</div>
+    <p-menu [model]="settingsItems"></p-menu>
   </div>
 </div>

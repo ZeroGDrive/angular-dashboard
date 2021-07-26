@@ -2,12 +2,13 @@
 
 $removerOutline: inset 0 0 0 !important;
 
-h1, h2, h3, h4, h5, h6, input, label, button, .font-family, .p-placeholder {
+h1, h2, h3, h4, h5, h6, input, label, button, .font-family, .p-placeholder, .p-menuitem {
   font-family: $fontFamily !important;
   font-weight: normal;
 }
 
-input:focus, .p-checkbox-box, .primary-button, .p-button-outlined, .p-dropdown {
+// removing the weird outline when clicking
+input:focus, .p-checkbox-box, .primary-button, .p-button-outlined, .p-dropdown, .p-menuitem-link {
   box-shadow: $removerOutline;
 }
 

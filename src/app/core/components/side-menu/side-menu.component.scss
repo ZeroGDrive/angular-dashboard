@@ -1,0 +1,44 @@
+@import "../../../../variables.scss";
+p-menu {
+  ::ng-deep & .p-menu {
+    width: 100%;
+    background-color: transparent;
+    border: 0;
+
+    & .p-menu-list {
+      & .p-menuitem {
+        font-size: 16px;
+        min-height: 45px;
+        & a {
+          display: block;
+          height: 100%;
+        }
+
+        & .p-menuitem-link {
+          padding: 12px 25px;
+          & span {
+            color: white;
+          }
+
+          & .p-menuitem-text {
+            margin-right: 10px;
+          }
+
+          &:hover:not(.p-menuitem-link-active) {
+            background-color: $menuColorDark;
+            & span {
+              color: white;
+            }
+          }
+        }
+
+        & .p-menuitem-link-active {
+          background-color: $menuColorDarker;
+          & span {
+            color: $primaryColor !important;
+          }
+        }
+      }
+    }
+  }
+}
