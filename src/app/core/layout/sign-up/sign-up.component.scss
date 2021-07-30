@@ -1,4 +1,4 @@
-@import '../../../../variables';
+@import "../../../../variables";
 
 .pi {
   color: $placeholderColor !important;
@@ -46,8 +46,16 @@ input {
 ::ng-deep .p-dropdown {
   border-color: $inputBorderUnfocused !important;
 
-  &:hover, &:focus {
+  &:hover,
+  &:focus {
     border-color: $primaryColor !important;
+  }
+
+  .p-highlight {
+    & div > span,
+    & div > .input-icon {
+      color: white !important;
+    }
   }
 }
 
@@ -57,7 +65,7 @@ input {
 }
 
 .required:after {
-  content:" *";
+  content: " *";
   color: red;
 }
 

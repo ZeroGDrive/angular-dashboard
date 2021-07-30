@@ -1,32 +1,54 @@
 <app-auth-container>
-  <form class="formgrid grid py-3 px-4">
-
+  <form class="formgrid grid py-3 px-4" [formGroup]="loginForm">
     <div class="field col-12">
-          <span class="p-input-icon-right w-full">
-            <i class="pi pi-user text-lg input-icon"></i>
-            <input required type="email" class="w-full text-lg px-6" pInputText placeholder="البريد الالكتروني"/>
-          </span>
+      <span class="p-input-icon-right w-full">
+        <i class="pi pi-user text-lg input-icon"></i>
+        <input
+          required
+          type="email"
+          class="w-full text-lg px-6"
+          pInputText
+          placeholder="البريد الالكتروني"
+          formControlName="email"
+        />
+      </span>
     </div>
     <div class="field col-12 mt-2">
-          <span class="p-input-icon-right w-full">
-            <i class="pi pi-lock text-lg input-icon"></i>
-            <input required type="password" class="w-full text-lg px-6" pInputText placeholder="كلمة المرور"/>
-          </span>
+      <span class="p-input-icon-right w-full">
+        <i class="pi pi-lock text-lg input-icon"></i>
+        <input
+          required
+          type="password"
+          class="w-full text-lg px-6"
+          pInputText
+          placeholder="كلمة المرور"
+          formControlName="password"
+        />
+      </span>
     </div>
 
     <div class="field col-12 pass-row mt-2">
       <div class="p-field-checkbox">
-        <p-checkbox name="remember" value="New York" inputId="remember"></p-checkbox>
+        <p-checkbox
+          name="remember"
+          value="New York"
+          inputId="remember"
+        ></p-checkbox>
         <label for="remember" class="mr-2">تذكرني</label>
       </div>
       <a href="#">هل نسيت كلمة المرور ؟</a>
     </div>
 
     <div class="field col-12">
-      <p-button type="submit" label="الدخول" iconPos="right" icon="pi pi-angle-left"
-                styleClass="py-1 w-full mt-2 primary-button"></p-button>
+      <p-button
+        type="submit"
+        label="الدخول"
+        iconPos="right"
+        icon="pi pi-angle-left"
+        styleClass="py-1 w-full mt-2 primary-button"
+        [disabled]="loginForm.invalid"
+      ></p-button>
     </div>
-
   </form>
 
   <div class="px-4 mt-5">
@@ -34,7 +56,10 @@
       <span>ليس لديك حساب تاجر ؟</span>
     </div>
 
-    <p-button routerLink="/register" label="إنشاء متجر جديد"
-              styleClass="py-1 w-full mt-3 p-button-outlined border-2"></p-button>
+    <p-button
+      routerLink="/register"
+      label="إنشاء متجر جديد"
+      styleClass="py-1 w-full mt-3 p-button-outlined border-2"
+    ></p-button>
   </div>
 </app-auth-container>

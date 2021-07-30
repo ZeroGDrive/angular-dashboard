@@ -1,15 +1,21 @@
 @import "../../../../variables";
 
 .auth-background {
-  background: url('../../../../assets/images/background.jpg') no-repeat center center fixed;
+  background: url("../../../../assets/images/background.svg") no-repeat left
+    center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
-  background-size: cover;
+  background-size: 65% 100%;
+}
+
+.background-color {
+  background-color: $authBackgroundColor;
 }
 
 .logo {
-  width: 100px;
+  margin-top: 10px;
+  width: 150px;
   height: auto;
 }
 
@@ -43,4 +49,8 @@
   & > span {
     color: $primaryColor;
   }
+}
+
+.color-card {
+  background-color: rgb(234 232 228);
 }

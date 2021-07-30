@@ -1,47 +1,83 @@
 <app-auth-container>
   <h5 class="text-center">✨مرحبا بك في عالم التجارة الالكترونية✨</h5>
   <form class="formgrid grid py-3 px-4" [formGroup]="registerForm">
-
     <div class="field col-12">
       <label for="store-name" class="required">اسم المتجر</label>
       <span class="p-input-icon-right w-full">
-            <i class="pi pi-shopping-cart text-lg input-icon"></i>
-            <input formControlName="storeName" required type="email" id="store-name" class="w-full text-lg px-6"
-                   pInputText placeholder="متجر ..."/>
-        <small class="text-pink-600" *ngIf="(formError | async) && catchFormErrors('storeName', 'required')">هذا الحقل مطلوب</small>
-          </span>
+        <i class="pi pi-shopping-cart text-lg input-icon"></i>
+        <input
+          formControlName="storeName"
+          required
+          type="email"
+          id="store-name"
+          class="w-full text-lg px-6"
+          pInputText
+          placeholder="متجر ..."
+        />
+        <small
+          class="text-pink-600"
+          *ngIf="
+            (formError | async) && catchFormErrors('storeName', 'required')
+          "
+          >هذا الحقل مطلوب</small
+        >
+      </span>
     </div>
     <div class="field col-12 mt-4">
       <label for="store-type" class="required">نوع المؤسسة</label>
-      <p-dropdown formControlName="storeType" optionLabel="label" optionValue="key" styleClass="w-full py-1"
-                  [options]="storeType"
-                  placeholder="اختر نوع المؤسسة" inputId="store-type"
+      <p-dropdown
+        formControlName="storeType"
+        optionLabel="label"
+        optionValue="key"
+        styleClass="w-full py-1"
+        [options]="storeType"
+        placeholder="اختر نوع المؤسسة"
+        inputId="store-type"
       >
         <ng-template let-selectedItem pTemplate="selectedItem">
           <div class="p-d-flex p-ai-center">
-            <i class="pi text-lg input-icon" [ngClass]="[selectedItem.icon]"></i>
-            <span class="font-family mx-2">{{selectedItem.label}}</span>
+            <i
+              class="pi text-lg input-icon"
+              [ngClass]="[selectedItem.icon]"
+            ></i>
+            <span class="font-family mx-2">{{ selectedItem.label }}</span>
           </div>
         </ng-template>
         <ng-template let-type pTemplate="item">
           <div class="p-d-flex p-ai-center">
             <i class="pi text-lg input-icon" [ngClass]="[type.icon]"></i>
-            <span class="font-family mx-2">{{type.label}}</span>
+            <span class="font-family mx-2">{{ type.label }}</span>
           </div>
         </ng-template>
       </p-dropdown>
-      <small class="text-pink-600" *ngIf="(formError | async) && catchFormErrors('storeType', 'required')">هذا الحقل
-        مطلوب</small>
+      <small
+        class="text-pink-600"
+        *ngIf="(formError | async) && catchFormErrors('storeType', 'required')"
+        >هذا الحقل مطلوب</small
+      >
     </div>
 
     <div class="field col-6 mt-4">
       <label for="admin-name" class="required">مدير المتجر</label>
       <span class="p-input-icon-right w-full">
-            <i class="pi pi-user text-lg input-icon"></i>
-            <input formControlName="adminName" required type="text" name="name" id="admin-name"
-                   class="w-full text-lg px-6" pInputText
-                   placeholder="الاسم الكريم"/>
-        <small class="text-pink-600" *ngIf="(formError | async) && catchFormErrors('adminName', 'required')">هذا الحقل مطلوب</small>
+        <i class="pi pi-user text-lg input-icon"></i>
+        <input
+          formControlName="adminName"
+          required
+          type="text"
+          name="name"
+          id="admin-name"
+          class="w-full text-lg px-6"
+          pInputText
+          placeholder="الاسم الكريم"
+        />
+        <small
+          class="text-pink-600"
+          *ngIf="
+            (formError | async) && catchFormErrors('adminName', 'required')
+          "
+          >هذا الحقل مطلوب</small
+        >
       </span>
     </div>
 
@@ -51,29 +87,56 @@
         <i class="pi pi-mobile text-lg input-icon"></i>
         <div dir="ltr" class="p-inputgroup">
           <span class="p-inputgroup-addon">+218</span>
-          <p-inputMask formControlName="phoneNumber" NumbersOnly [maxlength]="9" mask="99-9999999" id="phone"
-                       placeholder="91-2345678"
-                       styleClass="w-full text-lg pr-6"></p-inputMask>
+          <p-inputMask
+            formControlName="phoneNumber"
+            NumbersOnly
+            [maxlength]="9"
+            mask="99-9999999"
+            id="phone"
+            placeholder="91-2345678"
+            styleClass="w-full text-lg pr-6"
+          ></p-inputMask>
         </div>
-        <small class="text-pink-600 block" *ngIf="(formError | async) && catchFormErrors('phoneNumber', 'required')">هذا
-          الحقل مطلوب</small>
+        <small
+          class="text-pink-600 block"
+          *ngIf="
+            (formError | async) && catchFormErrors('phoneNumber', 'required')
+          "
+          >هذا الحقل مطلوب</small
+        >
       </div>
     </div>
 
     <div class="field col-6 mt-4">
       <label for="admin-email" class="required">البريد الالكتروني</label>
       <span class="p-input-icon-right w-full">
-            <i class="pi pi-envelope text-lg input-icon"></i>
-            <input formControlName="email" required type="text" name="email" id="admin-email"
-                   class="w-full text-lg px-6" pInputText
-                   placeholder="your@email.com"/>
-                  <small class="text-pink-600" *ngIf="(formError | async) && catchFormErrors('email', 'required')">هذا الحقل مطلوب</small>
+        <i class="pi pi-envelope text-lg input-icon"></i>
+        <input
+          formControlName="email"
+          required
+          type="text"
+          name="email"
+          id="admin-email"
+          class="w-full text-lg px-6"
+          pInputText
+          placeholder="your@email.com"
+        />
+        <small
+          class="text-pink-600"
+          *ngIf="(formError | async) && catchFormErrors('email', 'required')"
+          >هذا الحقل مطلوب</small
+        >
       </span>
     </div>
 
     <div class="field col-6 mt-4">
       <label for="admin-email" class="required">كلمة المرور</label>
-      <p-password formControlName="password" styleClass="w-full" [toggleMask]="true" placeholder="*********">
+      <p-password
+        formControlName="password"
+        styleClass="w-full"
+        [toggleMask]="true"
+        placeholder="*********"
+      >
         <ng-template pTemplate="header">
           <h6>اختر كلمة مرور</h6>
         </ng-template>
@@ -88,8 +151,16 @@
           </ul>
         </ng-template>
       </p-password>
-      <small class="text-pink-600" *ngIf="(formError | async) && catchFormErrors('password', 'required')">هذا الحقل مطلوب</small>
-      <small class="text-pink-600" *ngIf="catchFormErrors('password', 'minlength')">كلمة المرور قصيرة جدا</small>
+      <small
+        class="text-pink-600"
+        *ngIf="(formError | async) && catchFormErrors('password', 'required')"
+        >هذا الحقل مطلوب</small
+      >
+      <small
+        class="text-pink-600"
+        *ngIf="catchFormErrors('password', 'minlength')"
+        >كلمة المرور قصيرة جدا</small
+      >
     </div>
 
     <div class="col-12 mt-4">
@@ -104,10 +175,13 @@
     </div>
 
     <div class="field col-12 mt-4">
-      <p-button (click)="checkForm()" type="button" label="إنشاء المتجر"
-                styleClass="py-1 w-full mt-2 primary-button"></p-button>
+      <p-button
+        (click)="checkForm()"
+        type="button"
+        label="إنشاء المتجر"
+        styleClass="py-1 w-full mt-2 primary-button"
+      ></p-button>
     </div>
-
   </form>
   <div class="signIn-btn">
     <a href="#" class="flex justify-content-center" routerLink="/login">

@@ -27,13 +27,15 @@
 }
 
 // Change Those
-$fontFamily: Monster, -apple-system, BlinkMacSystemFont, "Segoe UI",
-Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-$fontColor: rgb(88,82,77);
-$primaryColor: rgb(238,129,55);
+$fontFamily: Monster, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+  Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+  "Segoe UI Symbol";
+$fontColor: rgb(88, 82, 77);
+$primaryColor: rgb(202 56 77);
 $menuColor: rgb(22, 38, 63);
-$inputBorderUnfocused: rgb(241,241,241);
-$placeholderColor: rgba(157,157,157);
+$inputBorderUnfocused: rgb(241, 241, 241);
+$placeholderColor: rgba(157, 157, 157);
+$authBackgroundColor: rgb(242 242 242);
 
 // Don't Change Those
 $menuColorDark: darken($menuColor, 2%);
