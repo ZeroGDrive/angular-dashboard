@@ -1,4 +1,9 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  ChangeDetectorRef,
+  Component,
+  OnInit,
+} from '@angular/core';
 import {
   FormBuilder,
   FormControl,
@@ -16,11 +21,14 @@ import { delay, finalize, tap, share } from 'rxjs/operators';
 })
 export class SignUpComponent implements OnInit {
   registerForm: FormGroup;
-  private _formError = new Subject<boolean>();
-  formError = this._formError.asObservable().pipe(share());
+  formError = false;
+  public _formError = new Subject<boolean>();
 
-  constructor(private _fb: FormBuilder) {
-    this.registerForm = _fb.group({
+  constructor(
+    private _fb: FormBuilder,
+    private _changeDetector: ChangeDetectorRef
+  ) {
+    this.registerForm = this._fb.group({
       storeName: new FormControl('', Validators.required),
       storeType: new FormControl('', Validators.required),
       adminName: new FormControl('', Validators.required),
@@ -34,6 +42,12 @@ export class SignUpComponent implements OnInit {
         Validators.required,
         Validators.minLength(8),
       ]),
+    });
+
+    // showing the error message
+    this._formError.asObservable().subscribe((value: boolean) => {
+      this.formError = value;
+      this._changeDetector.detectChanges();
     });
   }
 

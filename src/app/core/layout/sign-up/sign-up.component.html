@@ -16,9 +16,7 @@
         />
         <small
           class="text-pink-600"
-          *ngIf="
-            (formError | async) && catchFormErrors('storeName', 'required')
-          "
+          *ngIf="formError && catchFormErrors('storeName', 'required')"
           >هذا الحقل مطلوب</small
         >
       </span>
@@ -52,12 +50,12 @@
       </p-dropdown>
       <small
         class="text-pink-600"
-        *ngIf="(formError | async) && catchFormErrors('storeType', 'required')"
+        *ngIf="formError && catchFormErrors('storeType', 'required')"
         >هذا الحقل مطلوب</small
       >
     </div>
 
-    <div class="field col-6 mt-4">
+    <div class="field sm:col-6 col-12 mt-4">
       <label for="admin-name" class="required">مدير المتجر</label>
       <span class="p-input-icon-right w-full">
         <i class="pi pi-user text-lg input-icon"></i>
@@ -73,15 +71,13 @@
         />
         <small
           class="text-pink-600"
-          *ngIf="
-            (formError | async) && catchFormErrors('adminName', 'required')
-          "
+          *ngIf="formError && catchFormErrors('adminName', 'required')"
           >هذا الحقل مطلوب</small
         >
       </span>
     </div>
 
-    <div class="field col-6 mt-4">
+    <div class="field sm:col-6 col-12 mt-4">
       <label for="phone" class="required">رقم الهاتف</label>
       <div class="p-input-icon-right w-full">
         <i class="pi pi-mobile text-lg input-icon"></i>
@@ -99,15 +95,13 @@
         </div>
         <small
           class="text-pink-600 block"
-          *ngIf="
-            (formError | async) && catchFormErrors('phoneNumber', 'required')
-          "
+          *ngIf="formError && catchFormErrors('phoneNumber', 'required')"
           >هذا الحقل مطلوب</small
         >
       </div>
     </div>
 
-    <div class="field col-6 mt-4">
+    <div class="field sm:col-6 col-12 mt-4">
       <label for="admin-email" class="required">البريد الالكتروني</label>
       <span class="p-input-icon-right w-full">
         <i class="pi pi-envelope text-lg input-icon"></i>
@@ -123,13 +117,13 @@
         />
         <small
           class="text-pink-600"
-          *ngIf="(formError | async) && catchFormErrors('email', 'required')"
+          *ngIf="formError && catchFormErrors('email', 'required')"
           >هذا الحقل مطلوب</small
         >
       </span>
     </div>
 
-    <div class="field col-6 mt-4">
+    <div class="field sm:col-6 col-12 mt-4">
       <label for="admin-email" class="required">كلمة المرور</label>
       <p-password
         formControlName="password"
@@ -153,7 +147,7 @@
       </p-password>
       <small
         class="text-pink-600"
-        *ngIf="(formError | async) && catchFormErrors('password', 'required')"
+        *ngIf="formError && catchFormErrors('password', 'required')"
         >هذا الحقل مطلوب</small
       >
       <small
